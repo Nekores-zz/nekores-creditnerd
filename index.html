@@ -66,7 +66,7 @@
                               <div class="col-12">
                                 <div class="form-group custom-input-group">
                                     <label for="cardNumber">Card Number</label>
-                                    <input type="number" class="form-control card-main-number" placeholder="0000 0000 0000 0000" name="cardNumber" required pattern="[a-zA-Z '-]+" title="Please use letters only." value="">
+                                    <input type="text" maxlength="19" id="cardNumber" class="form-control card-main-number" placeholder="0000 0000 0000 0000" name="cardNumber" required pattern="[a-zA-Z '-]+" title="Please use letters only." value="">
                                     <img src="./img/mastercard.png" alt="" class="img-fluid click-image">
                                 </div>
                                 <p class="error-msg d-none">The card number must be 12-19 digits long.</p>
@@ -120,7 +120,7 @@
                                     <p class="p-0 mb-2 address-para">Is your home address the same as your billing address?</p>
                                     <div class="form-group form-check p-0 mb-3">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                            <input class="form-check-input inputfield" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                             <label class="form-check-label" for="exampleRadios1">
                                             Yes
                                             </label>
@@ -133,19 +133,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 one">
                                     <div class="form-group custom-input-group">
                                        <label for="billingStreet">Billing Street</label>
                                        <input type="text" class="form-control" placeholder="Billing Address" name="billingStreet" maxlength="16" required pattern="[\d]{15,}" title="Please use a valid Billing Address.">
                                     </div>
                                  </div>
-                                <div class="col-6">
+                                <div class="col-6 one">
                                     <div class="form-group custom-input-group">
                                        <label for="billingCity">Billing Town/City</label>
                                        <input type="text" class="form-control" placeholder="Town/City" name="billingCity" maxlength="16" required pattern="[\d]{15,}" title="Please use a valid Billing City.">
                                     </div>
                                  </div>
-                                 <div class="col-6">
+                                 <div class="col-6 one">
                                      <div class="form-group custom-input-group">
                                          <label for="billingState">Billing State</label>
                                          <select class="form-select" aria-label="Default select example">
@@ -156,7 +156,7 @@
                                            </select>
                                      </div>
                                   </div>
-                                <div class="col-6">
+                                <div class="col-6 one">
                                     <div class="form-group custom-input-group">
                                        <label for="billingZip">Billing Zip</label>
                                        <input type="text" class="form-control" placeholder="00000" name="billingZip" maxlength="16" required pattern="[\d]{15,}" title="Please use a valid Billing Zip.">
