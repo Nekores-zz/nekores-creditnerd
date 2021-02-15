@@ -54,14 +54,13 @@
                      <form name="paymentform" action="" method="post">
                         <div class="form-group custom-input-group">
                            <label for="username">Email Address </label>
-                           <input type="text" class="form-control" name="ccname" placeholder="example@gmail.com"
-                              required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
-                              title="Your email should be in the format of example@gmail.com." autocomplete="cc-email">
+                           <input type="text" class="form-control" name="email" placeholder="example@gmail.com" required
+                              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+                              title="Your email should be in the format of example@gmail.com." autocomplete="email">
                         </div>
                         <div class="form-group custom-input-group">
                            <label for="password">Create Password</label>
                            <input type="password" class="form-control" placeholder="***************" name="password"
-                              pattern="(?=.*\d)(?=.*[a-z]).{8,}"
                               title="Use password length of 8-15 with letters and numbers only." maxlength="15"
                               required>
                         </div>
@@ -69,16 +68,17 @@
                            <div class="col-12">
                               <div class="form-group custom-input-group">
                                  <label for="nameOnCard">Card Holder's Name</label>
-                                 <input type="text" class="form-control" placeholder="Jhon" name="nameOnCard" required
-                                    pattern="[a-zA-Z '-]+" title="Please use letters only." value="">
+                                 <input type="text" class="form-control" placeholder="Jhon" name="ccname" required
+                                    pattern="[a-zA-Z '-]+" title="Please use letters only." value=""
+                                    autocomplete="cc-name">
                               </div>
                            </div>
                            <div class="col-7">
                               <div class="form-group custom-input-group">
                                  <label for="cardNumber">Card Number</label>
                                  <input type="text" maxlength="19" id="cardNumber" class="form-control card-main-number"
-                                    placeholder="0000 0000 0000 0000" name="cardNumber" required
-                                    title="Please use letters only." value="">
+                                    placeholder="0000 0000 0000 0000" name="cardnumber" required
+                                    title="Please use letters only." value="" autocomplete="cc-number">
                                  <img src="./img/mastercard.png" alt="" class="img-fluid click-image">
                               </div>
                               <p class="error-msg d-none">The card number must be 12-19 digits long.</p>
@@ -102,8 +102,9 @@
                            <div class="col p-0">
                               <div class="form-group custom-input-group">
                                  <label for="expireDate">Exp date</label>
-                                 <input type="text" class="form-control" placeholder="MM/YY" name="expireDate"
-                                    maxlength="16" required pattern="[\d]{15,}" title="Please use a Expiration date.">
+                                 <input type="text" class="form-control" placeholder="MM/YY" name="cc-exp"
+                                    maxlength="16" required pattern="\d{1,2}/\d{1,2}"
+                                    title="Please use a Expiration date." autocomplete="cc-exp">
                               </div>
                            </div>
                            <div class="col position-relative">
@@ -112,9 +113,9 @@
                               </button>
                               <div class="form-group custom-input-group">
                                  <label for="securityCode">Sec code</label>
-                                 <input type="text" maxlength="3" class="form-control" placeholder="000"
-                                    name="securityCode" maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Security Code.">
+                                 <input type="text" maxlength="3" class="form-control" placeholder="000" name="cvc"
+                                    maxlength="16" required pattern="\d{1,2,3}"
+                                    title="Please use a valid Security Code." autocomplete="cc-csc">
                               </div>
                               <div class="tooltip-custom d-none">
                                  <p>The security code is 3 digits after the card number on its back.</p>
@@ -122,7 +123,7 @@
                            </div>
                         </div>
                         <div class="row">
-                           <div class="col-12">
+                           <!-- <div class="col-12">
                               <div class="form-group form-check">
                                  <input type="checkbox" class="form-check-input mr-2" name="userConsent" value="checked"
                                     required>
@@ -130,7 +131,32 @@
                                     next purchases.</label>
                               </div>
                               <hr>
+                           </div> -->
+                           <div class="safe-secure text-center">
+                              <div class="safe-head">
+                                 <img src="./img/lock.png" class="img-fluid" alt="">
+                                 <p class="mb-0 mx-3 py-3 safe-para">Guaranteed <b>Safe & Secure</b> Checkout</p>
+                                 <button class="btn btn-stripe"><img src="./img/Vector.png" alt=""></button>
+                              </div>
+                              <div class="safe-body mb-4">
+                                 <a href="#" class="credit-card mr-3">
+                                    <img src="./img/Visa.png" class="img-fluid" alt="">
+                                 </a>
+                                 <a href="#" class="credit-card mr-3">
+                                    <img src="./img/Mastercard.png" class="img-fluid" alt="">
+                                 </a>
+                                 <a href="#" class="credit-card mr-3">
+                                    <img src="./img/Am ex.png" class="img-fluid" alt="">
+                                 </a>
+                                 <a href="#" class="credit-card mr-3">
+                                    <img src="./img/Discover.png" class="img-fluid" alt="">
+                                 </a>
+                                 <a href="#" class="credit-card mr-3">
+                                    <img src="./img/Visa (1).png" class="img-fluid" alt="">
+                                 </a>
+                              </div>
                            </div>
+                           <hr class="mb-4">
                            <div class="col-12">
                               <p class="p-0 mb-2 address-para">Is your home address the same as your billing address?
                               </p>
@@ -155,7 +181,7 @@
                               <div class="form-group custom-input-group">
                                  <label for="billingStreet">Billing Street</label>
                                  <input type="text" class="form-control" placeholder="Billing Address"
-                                    name="billingStreet" maxlength="16" required pattern="[\d]{15,}"
+                                    name="billingStreet" maxlength="16" required
                                     title="Please use a valid Billing Address.">
                               </div>
                            </div>
@@ -163,8 +189,7 @@
                               <div class="form-group custom-input-group">
                                  <label for="billingCity">Billing Town/City</label>
                                  <input type="text" class="form-control" placeholder="Town/City" name="billingCity"
-                                    maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Billing City.">
+                                    maxlength="16" required title="Please use a valid Billing City.">
                               </div>
                            </div>
                            <div class="col-6 one">
@@ -207,31 +232,7 @@
                      </form>
                   </div>
                </div>
-               <hr>
-               <div class="safe-secure text-center">
-                  <div class="safe-head mb-2 mt-3">
-                     <img src="./img/lock.png" class="img-fluid" alt="">
-                     <p class="mb-0 mx-3 py-3 safe-para">Guaranteed <b>Safe & Secure</b> Checkout</p>
-                     <button class="btn btn-stripe"><img src="./img/Vector.png" alt=""></button>
-                  </div>
-                  <div class="safe-body mb-5">
-                     <a href="#" class="credit-card mr-3">
-                        <img src="./img/Visa.png" class="img-fluid" alt="">
-                     </a>
-                     <a href="#" class="credit-card mr-3">
-                        <img src="./img/Mastercard.png" class="img-fluid" alt="">
-                     </a>
-                     <a href="#" class="credit-card mr-3">
-                        <img src="./img/Am ex.png" class="img-fluid" alt="">
-                     </a>
-                     <a href="#" class="credit-card mr-3">
-                        <img src="./img/Discover.png" class="img-fluid" alt="">
-                     </a>
-                     <a href="#" class="credit-card mr-3">
-                        <img src="./img/Visa (1).png" class="img-fluid" alt="">
-                     </a>
-                  </div>
-               </div>
+
             </div>
          </div>
          <div class="col-md-4">
