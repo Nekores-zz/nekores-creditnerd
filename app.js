@@ -14,8 +14,16 @@ $("#myBtn").click(function () {
   }
 });
 
-$(".card-main-number").change(function (e) {
-  console.log(e);
+$(".card-wrapper").click(function (e) {
+  const selectedCardNumber = $(".card-number-para").text().split(" ").join("");
+  selectedCardNumber;
+  $("#cardNumber").val(
+    selectedCardNumber
+      .replace(/[^\dA-Z]/g, "")
+      .replace(/(.{4})/g, "$1 ")
+      .trim()
+  );
+  $(".card-outer").toggleClass("d-none");
 });
 
 $(document).ready(function () {
