@@ -350,12 +350,12 @@ footer p {
   margin-bottom: 0;
   color: #12426a;
 }
-.safe-secure {
+/* .safe-secure {
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ced4d9;
-}
+} */
 .safe-secure .safe-head {
   display: flex;
   justify-content: center;
@@ -378,14 +378,18 @@ footer p {
 .marge-input:focus {
   box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
+.border-wrapper{
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  margin-bottom: 20px;
+
+}
 .marge-input {
   position: relative;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: 1px solid #ced4da;
+  
 }
 .marge-input .marge-one {
   flex: 60%;
