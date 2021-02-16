@@ -72,8 +72,8 @@
                                     <label for="cardNumber" class="no-border">Card Number</label>
                                     <input onkeyup="movetoNext(this, 'expireDate')" size="20" type="text" maxlength="19"
                                        id="cardNumber" class="form-control card-main-number no-border"
-                                       placeholder="0000 0000 0000 0000" name="cardnumber" required
-                                       title="Please use letters only." autocomplete="cardnumber" value="">
+                                       placeholder="0000 0000 0000 0000" name="cc-number" required
+                                       title="Please use letters only." autocomplete="cc-number" value="">
                                     <img src="./img/mastercard.png" alt="" class="img-fluid click-image no-border">
                                  </div>
                                  <div class="card-outer d-none no-border">
@@ -95,8 +95,8 @@
                                  <div class="custom-input-group marge-two no-border">
                                     <label for="expireDate" class="no-border">Exp date</label>
                                     <input onkeyup="movetoNext(this, 'securityCode')" size="6" type="text"
-                                       class="form-control no-border" placeholder="MM/YY" name="exp" id="expireDate"
-                                       maxlength="5" required autocomplete="exp" title="Please use a Expiration date.">
+                                       class="form-control no-border" placeholder="MM/YY" name="cc-exp" id="expireDate"
+                                       maxlength="5" required autocomplete="cc-exp" title="Please use a Expiration date.">
                                  </div>
                                  <div class="form-group custom-input-group marge-three no-border">
                                     <label for="securityCode" class="no-border">Sec code</label>
@@ -143,8 +143,8 @@
                            <div class="col-12">
                               <div class="form-group custom-input-group">
                                  <label for="nameOnCard">Card Holder's Name</label>
-                                 <input type="text" class="form-control" placeholder="Jhon" id="nameOnCard" name="name" required
-                                    pattern="[a-zA-Z '-]+" autocomplete="name" title="Please use letters only." value="">
+                                 <input type="text" class="form-control" placeholder="Jhon" id="nameOnCard" name="cc-name" required
+                                    pattern="[a-zA-Z '-]+" autocomplete="cc-name" title="Please use letters only." value="">
                               </div>
                            </div>
                            <hr>
@@ -172,16 +172,16 @@
                               <div class="form-group custom-input-group">
                                  <label for="billingStreet">Billing Street</label>
                                  <input type="text" class="form-control" placeholder="Billing Address"
-                                    name="billingStreet" maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Billing Address.">
+                                    name="ship-address" maxlength="16" required pattern="[\d]{15,}"
+                                    title="Please use a valid Billing Address." autocapitalize="shipping street-address">
                               </div>
                            </div>
                            <div class="col-6 one">
                               <div class="form-group custom-input-group">
                                  <label for="billingCity">Billing Town/City</label>
-                                 <input type="text" class="form-control" placeholder="Town/City" name="billingCity"
+                                 <input type="text" class="form-control" placeholder="Town/City" name="ship-city"
                                     maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Billing City.">
+                                    title="Please use a valid Billing City." autocomplete="shipping locality">
                               </div>
                            </div>
                            <div class="col-6 one">
@@ -198,8 +198,8 @@
                            <div class="col-6 one">
                               <div class="form-group custom-input-group">
                                  <label for="billingZip">Billing Zip</label>
-                                 <input type="text" class="form-control" placeholder="00000" name="billingZip"
-                                    maxlength="16" required pattern="[\d]{15,}" title="Please use a valid Billing Zip.">
+                                 <input type="text" class="form-control" placeholder="00000" name="ship-zip"
+                                    maxlength="16" required pattern="[\d]{15,}" title="Please use a valid Billing Zip." autocomplete="shipping postal-code">
                               </div>
                            </div>
                            <div class="col-12">
