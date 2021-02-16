@@ -350,6 +350,12 @@ footer p {
   margin-bottom: 0;
   color: #12426a;
 }
+.safe-secure {
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4d9;
+}
 .safe-secure .safe-head {
   display: flex;
   justify-content: center;
