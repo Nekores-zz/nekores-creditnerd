@@ -259,10 +259,10 @@ footer p {
   margin-bottom: 20px;
   box-shadow: 0px 0px 4px rgb(18 66 106 / 20%);
   border-radius: 7px 8px 8px 8px;
-  margin-top: -20px;
   width: max-content;
   position: absolute;
   z-index: 1;
+  top: 58px;
   background: #fff;
 }
 .card-outer hr {
@@ -306,7 +306,7 @@ footer p {
   color: #5a5f65;
 }
 .error {
-  border: 1px solid #eb001b !important;
+  /* border: 1px solid #eb001b !important; */
 }
 .error-msg {
   font-family: Montserrat;
@@ -368,4 +368,45 @@ footer p {
 .btn-stripe {
   background: #12426a;
   padding: 2px 20px;
+}
+.marge-input:focus {
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+.marge-input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+.marge-input .marge-one {
+  flex: 60%;
+}
+.marge-input .marge-two,
+.marge-input .marge-three {
+  flex: 20%;
+}
+.marge-input input {
+  border: none;
+}
+.marge-input input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.marge-input .custom-input-group {
+  margin-bottom: 0;
+}
+/* input {
+  outline: none !important;
+} */
+/* input:focus {
+  box-shadow: none !important;
+} */
+
+.credit-card img {
+  width: 46px;
+  height: 30px;
+  margin: 0 2px;
 }

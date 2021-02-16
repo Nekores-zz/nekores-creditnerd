@@ -5,11 +5,12 @@ $("#myBtn").click(function () {
   var inp = $(".card-main-number");
   var err = $(".error-msg");
   const inpVal = inp.val();
+  const margeInp = $(".marge-input");
   console.log(inpVal.length);
   if (inpVal.length > 12 && inpVal.length <= 19) {
     console.log("valid");
   } else {
-    inp.addClass("error");
+    margeInp.addClass("error");
     err.toggleClass("d-none");
   }
 });
@@ -45,4 +46,31 @@ $("input:radio").change(function () {
   } else {
     $(".one").show();
   }
+});
+function movetoNext(current, nextFieldID) {
+  if (current.value.length >= current.maxLength) {
+    document.getElementById(nextFieldID).focus();
+  }
+}
+
+$(function () {
+  $(".marge-input").on("click", () => {
+    $(".marge-input").css({
+      borderColor: "#86b7fe",
+      outline: 0,
+      boxShadow: "0 0 0 0.25rem rgb(13 110 253 / 25%)",
+    });
+  });
+  $(document).on("click", function (e) {
+    if ($(e.target).is(".no-border") === false) {
+      $(".marge-input").removeAttr("style");
+    }
+  });
+});
+
+$(function () {
+  $("body").click(function () {
+    if (!$(this.target).is("#marge-input")) {
+    }
+  });
 });
